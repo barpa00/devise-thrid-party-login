@@ -1,0 +1,19 @@
+<nav>
+    <ul>
+    <div class="right">
+        <li><%= link_to "首頁", root_path %></li>
+        <li><%= link_to "看版列表", boards_path %></li>
+    </div>
+        
+    <div class="left">
+        <%# <% if session[:userooo].present? %>
+        <% if current_user %>
+            <li><%= current_user.nickname %></li>
+            <li><%= link_to "登出", sign_out_users_path , method: 'delete' %></li>
+        <% else %>
+            <li><%= link_to "註冊", sign_up_users_path %></li>
+        <li><%= link_to "登入", sign_in_users_path %></li>
+        <% end %>
+    </div>
+    </ul>
+</nav>

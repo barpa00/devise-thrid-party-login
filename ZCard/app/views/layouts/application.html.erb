@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ZCard</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>   
+  <body>
+    <%= render "componet/navbar" %>
+    <%= render "componet/flash" if flash[:notice] %>
+    <section class="mainSection">
+      <%= yield %>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<h2><%= @post.user.nickname %></h2>
+<h1><%= @post.title %></h1>
+
+
+<%# <% if current_user.own?(@post)%>
+
+
+<%# <% if @post.owned_by?(current_user) %>
+  <%= link_to '編輯', edit_post_path(@post) if @post.owned_by?(current_user)%>
+<%# <% end %>
+
+<article>
+  <%= simple_format(@post.content) %>
+</article>
+
+<%= link_to '回上頁', :back %>
+
+<%= form_for(@comment, url: post_comments_path(@post)) do |f| %>
+  <%= f.text_area :content, placeholder: "留言"%>
+  <%= f.submit %>
+<% end %>
+
+
+<ul>  
+<% @comments.each do |comment| %>  
+  <li>[<%= comment.user.nickname %>]
+  <%= comment.content %>
+  <%= link_to "刪除", comment_path(comment), method: 'delete', data: { confirm: "確定刪除?" }%></li>
+<% end %>
+</ul>

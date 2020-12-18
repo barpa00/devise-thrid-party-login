@@ -1,0 +1,19 @@
+<h1>註冊</h1>
+
+<%= form_for(@user, url: '/reg' ,method: ' post') do |f| %>
+
+  <%= f.label :email, "信箱" %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password, "密碼" %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "密碼確認" %>
+  <%= f.password_field :password_confirmation %>
+ 
+  <%= f.label :nickname %>
+  <%= f.text_field :nickname %>
+
+  <%= f.submit "reg" %>
+
+<% end %>

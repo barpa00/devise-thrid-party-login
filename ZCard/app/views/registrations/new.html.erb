@@ -1,0 +1,19 @@
+<h1>註冊會員</h1>
+
+
+<!-- @user, url: '/registrations', method: 'post' -->
+<%= form_for(@user) do |u|%>
+    <%= u.label :email %>
+    <%= u.text_field :email %><br>
+
+    <%= u.label :password %>
+    <%= u.password_field :password %><br>
+
+    <%= u.label :password_confirmation %>
+    <%= u.password_field :password_confirmation %><br>
+
+    <%= u.label :nickname %>
+    <%= u.text_field :nickname %><br>
+
+    <%= u.submit %>
+<% end %>

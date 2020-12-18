@@ -1,0 +1,12 @@
+<h1>edit</h1>
+
+<%= form_for(current_user, url: users_path, method: 'put' ) do |u|%>
+    <%= u.label :email %>
+    <%= u.text_field :email %><br>
+
+    <%= u.label :nickname %>
+    <%= u.text_field :nickname %><br>
+
+    <%= u.submit %>
+    
+<% end %>
